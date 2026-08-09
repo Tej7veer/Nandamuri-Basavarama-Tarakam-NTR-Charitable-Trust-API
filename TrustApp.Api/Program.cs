@@ -54,6 +54,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Updated fallback: exclude api/* and swagger-related paths so Swagger UI and its JSON are not overridden.
-app.MapFallbackToFile("{*path:regex(^(?!(api/|swagger|swagger-ui)).*$)}", "index.html");
-
+app.MapFallbackToFile("{*path:regex(^(?!api/).*$)}", "index.html");
 app.Run();
