@@ -111,14 +111,31 @@ public class DonationInquiry
     [Required, MaxLength(120)]
     public string FullName { get; set; } = string.Empty;
 
+    [Required, MaxLength(30)]
+    public string MobileNo { get; set; } = string.Empty;
+
     [Required, EmailAddress, MaxLength(200)]
     public string Email { get; set; } = string.Empty;
 
+    public DateTime? Dob { get; set; }
+
+    [MaxLength(10)]
+    public string? PanCardNo { get; set; }
+
+    [Required, MaxLength(100)]
+    public string State { get; set; } = string.Empty;
+
+    [Required, MaxLength(100)]
+    public string City { get; set; } = string.Empty;
+
+    [Required, MaxLength(10)]
+    public string PinCode { get; set; } = string.Empty;
+
+    [Required, MaxLength(1000)]
+    public string Address { get; set; } = string.Empty;
+
     [Range(1, 10_000_000)]
     public decimal Amount { get; set; }
-
-    [MaxLength(500)]
-    public string? Note { get; set; }
 
     public DateTime SubmittedAt { get; set; } = DateTime.UtcNow;
 }
