@@ -18,10 +18,34 @@ public record VolunteerApplicationDto(
 );
 
 public record DonationInquiryDto(
-    [Required, MaxLength(120)] string FullName,
-    [Required, EmailAddress, MaxLength(200)] string Email,
-    [Range(1, 10_000_000)] decimal Amount,
-    [MaxLength(500)] string? Note
+    [Required, MaxLength(120)]
+    string FullName,
+
+    [Required, MaxLength(30)]
+    string MobileNo,
+
+    [Required, EmailAddress, MaxLength(200)]
+    string Email,
+
+    DateTime? Dob,
+
+    [MaxLength(10)]
+    string? PanCardNo,
+
+    [Required, MaxLength(100)]
+    string State,
+
+    [Required, MaxLength(100)]
+    string City,
+
+    [Required, MaxLength(10)]
+    string PinCode,
+
+    [Required, MaxLength(1000)]
+    string Address,
+
+    [Range(1, 10_000_000)]
+    decimal Amount
 );
 
 public record ProgramItemDto(
